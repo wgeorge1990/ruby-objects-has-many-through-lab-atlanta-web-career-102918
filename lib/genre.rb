@@ -8,6 +8,13 @@ class Genre
         @@all << self
     end
 
+    #This is method is another version of the initialize method with 
+    #mass assignment implemented.
+    def new_initialize(attributes)
+        attributes.each {|key, value| self.send(("#{key}="), value)}
+    end
+
+
     def self.all
         @@all
     end
@@ -20,7 +27,7 @@ class Genre
         songs.map {|song| song.artist}
     end
 
-    
+
 
 
 end
